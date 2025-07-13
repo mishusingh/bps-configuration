@@ -1,0 +1,21 @@
+spring:
+  application:
+  name: Config-Server
+  cloud:
+    config:
+      server:
+        .git:
+          uri: https://github.com/mishusingh/bps-configuration.git
+          default-label: main
+          clone-on-start: true
+          force-pull: true
+
+server:
+  port: 8888
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
